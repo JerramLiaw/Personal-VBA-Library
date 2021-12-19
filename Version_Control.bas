@@ -1,19 +1,21 @@
 Attribute VB_Name = "Version_Control"
 Option Explicit
 
-Public Sub Export_Modules()
-'   The objective is to export all VBA modules into a local repo which will be managed by Git in PowerShell.
-
-'   Declaring all relevant variables for our Macro
+'   Declare Module level variables
     Dim objFSO As Scripting.FileSystemObject
     Dim objFile As Scripting.File
     Dim VBA_Repo As String
     Dim File_Path As String
     Dim VB_Comp As VBIDE.VBComponent
+
+Sub Export_Modules()
+'   The objective is to export all VBA modules into a local repo which will be managed by Git in PowerShell.
+
+'   Declaring all macro level variables
     Dim Export_Switch As Boolean
     Dim Export_Name As String
-    
-'   Setting our export path. To make this more dynamic in the future when no longer using OneDrive
+
+'   Setting module level variables
     VBA_Repo = "C:\Users\Jerram\OneDrive - Singapore Management University\Desktop\Business Intelligence\VBA\VBA Github Repo"
     File_Path = VBA_Repo & "\"
 
@@ -61,21 +63,8 @@ Public Sub Export_Modules()
 
 End Sub
 
-Public Sub Import_Modules()
+Sub Import_Modules()
 '   The objective is to import all VBA modules from the local repo into the current workbook for use
-
-
-'   Declaring all relevant variables for our Macro
-    Dim objFSO As Scripting.FileSystemObject
-    Dim objFile As Scripting.File
-    Dim VBA_Repo As String
-    Dim File_Path As String
-    Dim VB_Comp As VBIDE.VBComponent
-
-'   Setting the variables used in the export module
-    VBA_Repo = "C:\Users\Jerram\OneDrive - Singapore Management University\Desktop\Business Intelligence\VBA\VBA Github Repo"
-    File_Path = VBA_Repo & "\"
-    Set objFSO = New Scripting.FileSystemObject
 
 '   Imports all module files into the workbook
     For Each objFile In objFSO.GetFolder(File_Path).Files
