@@ -15,12 +15,12 @@ Sub Export_Modules()
     Dim Export_Switch As Boolean
     Dim Export_Name As String
 
-'   Setting module level variables
+'   Setting variable values
+    Set objFSO = New Scripting.FileSystemObject
     VBA_Repo = "C:\Users\Jerram\OneDrive - Singapore Management University\Desktop\Business Intelligence\VBA\VBA Github Repo"
     File_Path = VBA_Repo & "\"
 
 '   Initialize the Repo folder by deleting all module files inside it
-    Set objFSO = New Scripting.FileSystemObject
     For Each objFile In objFSO.GetFolder(File_Path).Files
         If (objFSO.GetExtensionName(objFile.Name) = "cls") Or _
             (objFSO.GetExtensionName(objFile.Name) = "frm") Or _
@@ -65,6 +65,11 @@ End Sub
 
 Sub Import_Modules()
 '   The objective is to import all VBA modules from the local repo into the current workbook for use
+
+'   Setting variable values
+    Set objFSO = New Scripting.FileSystemObject
+    VBA_Repo = "C:\Users\Jerram\OneDrive - Singapore Management University\Desktop\Business Intelligence\VBA\VBA Github Repo"
+    File_Path = VBA_Repo & "\"
 
 '   Imports all module files into the workbook
     For Each objFile In objFSO.GetFolder(File_Path).Files
