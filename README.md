@@ -22,3 +22,10 @@ In order to overcome these limitations, I build a macro that **performs an impro
 This module was inspired by an [old blogpost](http://exceltalk.blogspot.com/2014/03/customized-mail-merge-using-vba-in-word.html?m=1) that tried to do something similar. I adjusted the code with the intention of making the merge process fully customizable, not just stopping at CC/BCC. I also added an additional macro that would create a dynamic excel template whenever we want to run the macro. Similar to my version control module, my file paths are hardcoded due to limitations with using OneDrive.
 
 Through coding this module, it helped me to **properly understand the Object Oriented Programming (OOP) way of coding and thinking** as this macro had to interact with different applications all at once. It also helped me to **understand loops** a lot better as they were extensively used to ensure the code was ran a precise number of times.
+
+## Module 3: Worksheet Index
+Building a model in Excel can often involve a large number of sheets, especially if the raw data is included in the sheets as well. It can be difficult to navigate between sheets.
+
+Thus, I built a macro that inserts an **Index Sheet** that will serve as a central hub to allow for easy navigation throughout the workbook. The macro inserts a hyperlink in the Index Sheet to travel to that sheet and inserts a hyperlink in the first cell of each worksheet to return to the Index sheet.
+
+Coding this module was not too challenging, but it served as good practice to check that my understanding of VBA is correct.
