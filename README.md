@@ -26,6 +26,17 @@ Through coding this module, it helped me to **properly understand the Object Ori
 ## Module 3: Worksheet Index
 Building a model in Excel can often involve a large number of sheets, especially if the raw data is included in the sheets as well. It can be difficult to navigate between sheets.
 
-Thus, I built a macro that inserts an **Index Sheet** that will serve as a central hub to allow for easy navigation throughout the workbook. The macro inserts a hyperlink in the Index Sheet to travel to that sheet and inserts a hyperlink in the first cell of each worksheet to return to the Index sheet.
+Thus, I built a macro that inserts an **Index Sheet** that will serve as a central hub to allow for easy navigation throughout the workbook. The macro inserts a **hyperlink** in the Index Sheet to travel to that sheet and inserts a hyperlink in the first cell of each worksheet to return to the Index sheet. I ended up using a version of this macro in one of my school's spreadsheet projects.
 
 Coding this module was not too challenging, but it served as good practice to check that my understanding of VBA is correct.
+
+## Module 4: Data Cleaning
+Ever since I started learning Excel and Data Science, I realised that most datasets I work with initially come in the form of a spreadsheet. Coding languages like Python & R have in-built packages or functions meant to conduct help to clean the data. In recent years, Microsoft has also released [Power Query](https://docs.microsoft.com/en-us/power-query/power-query-what-is-power-query) to do something similar. 
+
+With this in mind, I built a collection of VBA macros that will complement Power Query when building a Model in Excel. The first macro in the module (*show everything*) does as its name suggests - It will unhide all sheets, rows/columns, unfilters any data and unmerges all merged cells by converting horizontal ones to Center Across Selection and filling the data for vertical ones. This allows you to standardize the spreadsheet, allowing you to have a good look at it before passing it into Power Query.
+
+In order to have a quick visual scan about the quality of the data, the second macro (*Find Missing*) applies a conditional format to the used range to easily identify blanks in the data by highlighting them, allowing us to have a quick visual indicator of what we have or dont have. 
+
+Lastly, while building our Excel model, we may run into some errors when dividing by 0 or what not. The last module allows the user to instantly apply an IFERROR tag to any formula with the choice of what kind of output they want.
+
+Unlike previous modules, this only worked with the Excel Object Model, which was good practice given that VBA is most commonly used in Excel.
