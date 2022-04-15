@@ -40,3 +40,7 @@ In order to have a quick visual scan about the quality of the data, the second m
 Lastly, while building our Excel model, we may run into some errors when dividing by 0 or what not. The last module allows the user to instantly apply an IFERROR tag to any formula with the choice of what kind of output they want.
 
 Unlike previous modules, this only worked with the Excel Object Model, which was good practice given that VBA is most commonly used in Excel.
+
+$$
+\dfrac{0}{1}
+$$
